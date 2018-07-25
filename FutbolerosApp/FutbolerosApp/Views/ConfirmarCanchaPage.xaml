@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FutbolerosApp.Views.ConfirmarCanchaPage"
+             NavigationPage.HasBackButton="True"
+             Title="Confirmación de la Reserva">
+    <ScrollView>
+        <StackLayout>
+
+            <Image 
+             Source="Logo.png" 
+             Aspect="AspectFit" 
+             Margin="40" 
+             WidthRequest="600"  
+             VerticalOptions="Center" 
+             HorizontalOptions="Center"/>
+
+            <Image 
+             Source="america.png" 
+             Aspect="AspectFit" 
+             Margin="40" 
+             WidthRequest="200"  
+             VerticalOptions="Center" 
+             HorizontalOptions="Center"/>
+
+
+            <Label
+                            TextColor="Black"
+                            FontSize="Large"
+                            HorizontalOptions="Center"
+                            Text="Gracias por utilizar nuestro Sistema">
+            </Label>
+            
+
+
+
+            <Button 
+                Margin="10,10" 
+                Text="Verificar" 
+                BackgroundColor="GreenYellow" 
+                TextColor="Black" FontSize="18" 
+                Command="{Binding LogoutCommand}"/>
+
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

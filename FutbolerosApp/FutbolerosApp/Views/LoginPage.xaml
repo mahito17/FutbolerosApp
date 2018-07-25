@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FutbolerosApp.Views.LoginPage"
+             NavigationPage.HasNavigationBar="True"
+             BackgroundColor="Black"
+                
+             Title="Futboleros">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid
+                x:Name="LayoutRoot" 
+                BackgroundColor="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <ActivityIndicator 
+                    IsRunning="{Binding IsBusy, Mode=TwoWay}" 
+                    Grid.RowSpan="3" 
+                    Color="Red" 
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center"/>
+
+
+                <StackLayout 
+                     Grid.Row="1" 
+                     Orientation="Vertical" 
+                     Margin="0,10,0,10">
+
+                    <StackLayout 
+                          Orientation="Vertical" 
+                          VerticalOptions="Center" 
+                          Margin="0,5,0,0" 
+                          BackgroundColor="White" 
+                          Opacity="0.8">
+
+                        <Image 
+                         Source="Logo.png" 
+                         Aspect="AspectFit" 
+                         Margin="40" 
+                         WidthRequest="180"  
+                         VerticalOptions="Center" 
+                         HorizontalOptions="Center"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout 
+                 Grid.Row="2" 
+                 Orientation="Vertical" 
+                 BackgroundColor="White" 
+                 Opacity="0.8">
+
+                    <StackLayout 
+                     Orientation="Vertical" 
+                     Margin="30,10">
+
+                        <Entry 
+                         Text="{Binding User.Email, Mode=TwoWay}" 
+                         x:Name="EmailEntry" 
+                         TextColor="Black" 
+                         Placeholder="Ingrese su email..." 
+                         PlaceholderColor="Gray" 
+                         Keyboard="Email" 
+                         FontSize="20" 
+                         HorizontalTextAlignment="Start"/>
+
+                        <Entry 
+                         Text="{Binding User.Password, Mode=TwoWay}" 
+                         x:Name="PasswordEntry" 
+                         TextColor="Black" 
+                         Placeholder="Ingrese su Contraseña..." 
+                         PlaceholderColor="Gray" 
+                         IsPassword="True" 
+                         FontSize="20" 
+                         HorizontalTextAlignment="Start"/>
+
+
+                        <StackLayout 
+                            Margin="10,0"
+                            Orientation="Horizontal">
+                            <Button 
+                             Margin="10,0" 
+                             Text="Ingresar" 
+                             HorizontalOptions="FillAndExpand"
+                             BackgroundColor="GreenYellow" 
+                             BorderRadius="100"
+                             TextColor="Black" 
+                             FontSize="Medium" 
+                             Command="{Binding LoginCommand}"/>
+
+                            <Button 
+                             Margin="10,0" 
+                             Text="Registro" 
+                             HorizontalOptions="FillAndExpand"
+                             BorderRadius="100"
+                             BackgroundColor="Indigo" 
+                             TextColor="White" 
+                             FontSize="Medium" 
+                             Command="{Binding RegistroCommand}"/>
+                        </StackLayout>
+                        <Label
+                            TextColor="Red"
+                            FontSize="Medium"
+                            HorizontalOptions="Center"
+                            Text="Olvido su Contraseña?">
+                        </Label>
+                        <StackLayout 
+                            Orientation="Horizontal"
+                            HorizontalOptions="CenterAndExpand">
+                            <Image 
+                             Source="facebook.png"
+                             WidthRequest="60">
+                            </Image>
+
+                            <Image 
+                             Source="gmail.png"
+                             WidthRequest="40">
+                            </Image>
+
+                            <Image 
+                             Source="instagram.png"
+                             WidthRequest="40">
+                            </Image>
+
+                            <Image 
+                             Source="twitter.png"
+                             WidthRequest="48">
+                            </Image>
+                            
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FutbolerosApp.Views.MainPage"
+             NavigationPage.HasBackButton="True"
+             Title="Seleccionar Cancha">
+    <ScrollView>
+        
+        <StackLayout 
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="Fill"
+            Padding="10"
+            Margin="10,0">
+            <Label 
+                Text="{Binding Message}" 
+                FontSize="Medium" 
+                HorizontalOptions="CenterAndExpand"/>
+            <ListView 
+                      x:Name="ListCanchas" 
+                      ItemsSource="{Binding LCanchas}" 
+                      HasUnevenRows="True"
+                      HorizontalOptions="Center">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Image Source="{Binding Imagen}"/>
+                                
+                            </StackLayout>
+                        </ViewCell>
+                        <!--<TextCell Text="{Binding Nombre}" Detail="{Binding Descripcion}">
+                            
+                        </TextCell>-->
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+                 
+            
+            <Button 
+                Margin="0,10" 
+                Text="Continuar" 
+                BackgroundColor="GreenYellow" 
+                TextColor="Black" FontSize="18" 
+                Command="{Binding LogoutCommand}"/>
+           
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FutbolerosApp.Views.MostrarReservaPage"
+             NavigationPage.HasBackButton="True"
+             Title="Detalles de la Reserva">
+
+
+    <StackLayout
+        HorizontalOptions="Fill"
+        VerticalOptions="Fill">
+        <Grid
+                x:Name="LayoutRoot" 
+                BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+        </Grid>
+
+        <StackLayout 
+         Grid.Row="1"
+         Orientation="Horizontal"
+         Margin="0,5,0,10">
+
+            <StackLayout 
+             Orientation="Horizontal" 
+             HorizontalOptions="Center" 
+             Margin="0,15,0,0" 
+             BackgroundColor="White"
+             Opacity="0.8">
+                <Image 
+                 Source="ubicacion.png" 
+                 Aspect="AspectFill" 
+                 Margin="10" 
+                 WidthRequest="400"  
+                 VerticalOptions="Fill" 
+                 HorizontalOptions="Fill">
+
+                </Image>
+            </StackLayout>
+        </StackLayout>
+
+
+        <Label
+         Text="Seleccione Fecha"
+         HorizontalOptions="CenterAndExpand"
+         TextColor="Black"
+         FontSize="Large"
+         FontAttributes="Bold"/>
+
+
+        <DatePicker
+         HorizontalOptions="CenterAndExpand"
+         x:Name="datePicker"
+         Format="dd/MM/yyyy"
+         DateSelected="DatePicker_OnDateSelected"
+         Margin="10, 0" />
+
+        <Label 
+         Text="Seleccione Hora"
+         HorizontalOptions="CenterAndExpand" 
+         TextColor="Black"
+         FontSize="Large"
+         FontAttributes="Bold"/>
+
+
+
+        <TimePicker 
+         HorizontalOptions="CenterAndExpand"
+         x:Name="timePicker"
+         Format="T"
+            />
+
+        <Label 
+         Text="Cantidad de Horas "
+         HorizontalOptions="CenterAndExpand" 
+         TextColor="Black"
+         FontSize="Large"
+         FontAttributes="Bold"/>
+
+        
+         <Button 
+          Margin="0,10" 
+          VerticalOptions="CenterAndExpand"
+          Text="Realizar Reserva" 
+          BackgroundColor="GreenYellow"
+          TextColor="Black" 
+          FontSize="18" 
+          Command="{Binding LogoutCommand}"/>
+        </StackLayout>
+</ContentPage>

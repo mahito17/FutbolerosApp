@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FutbolerosApp.Views.SeleccionCanchaPage"
+             NavigationPage.HasBackButton="True"
+             Title="Detalles de la Cancha">
+    <ScrollView>
+        <StackLayout>
+            <Label Text="Caracteristicas"
+               FontSize="Medium"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+            <WebView 
+             AutomationProperties.IsInAccessibleTree="True"
+             Margin="10"
+             Source="https://www.youtube.com/embed/eVD-lWlq8CE?ecver=2"
+             VerticalOptions="FillAndExpand" />
+
+
+
+            <Button 
+                Margin="0,10" 
+                Text="Continuar" 
+                BackgroundColor="GreenYellow" 
+                TextColor="Black" FontSize="18" 
+                Command="{Binding LogoutCommand}"/>
+
+            
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
